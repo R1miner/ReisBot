@@ -1,0 +1,14 @@
+{
+  "name": "reisbot",
+  "version": "1.0.0",
+  "description": "bot fromreisminer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ReisMiner",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
