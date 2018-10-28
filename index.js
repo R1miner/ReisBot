@@ -47,10 +47,10 @@ bot.on("message", async message => {
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
 
-    switch (args[0]) {
+    switch (cmd[0]) {
         case "$play":
             message.channel.send("check");
-            if(!args[1]){
+            if(!cmd[1]){
                 message.channel.send("Bitte schreib ein Link hinein.");
                 return;
             }
