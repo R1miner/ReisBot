@@ -33,7 +33,7 @@ bot.on("message", function (message) {
 });
 
 bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "general").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
+   member.guild.channels.find("name", "main-chat").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
 
    member.addRole(member.guild.role.find("name", "Zuschauer"));
 });
