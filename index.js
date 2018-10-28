@@ -38,22 +38,6 @@ bot.on("message", async message => {
     if (cmd === `oke` || cmd === `Oke`) {
         return message.channel.send("oke");
     }
-    if (cmd === `${prefix}play`) {
-        if (!message.member.voiceChannel) {
-            message.channel.send("Du must in einem Voice kanal sein.");
-            return;
-        } else {
-            message.channel.send("Bitte schreib ein Link hinein.");
-            if (!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-            }
-
-            if (!messge.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
-                play(connection, message);
-
-            })
-        }
-    }
     if (cmd === `${prefix}skip`) {
         var server = servers[message.guild.id];
         if (server.dispatcher) server.dispatcher.end();
@@ -64,7 +48,7 @@ bot.on("message", async message => {
     }
 
     switch (args[0]) {
-        case `${prefix}play`:
+        case "$play":
             message.channel.send("check");
             if(!args[1]){
                 message.channel.send("Bitte schreib ein Link hinein.");
