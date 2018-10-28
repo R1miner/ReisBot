@@ -15,9 +15,11 @@ bot.on("message", function (message) {
 
     if (message.content == "oke" || message.content == "Oke") {
         message.channel.send("oke");
+        return;
     }
     if (message.content == "hmm" || message.content == "Hmm") {
         message.channel.send(":D");
+        return;
     }
 
     var args = message.content.substring(botconfig.prefix.length).split(" ");
@@ -26,14 +28,12 @@ bot.on("message", function (message) {
         case"ping":
             message.channel.send("Zu Hoch :grinning:");
             break;
-        default:
-            message.channel.send("Nur diese Commands gehen: $play, $skip, $stop");
     }
 
 });
 
 bot.on("guildMemberAdd", function(member){
-   member.build.channels.find("name", "general").send(" Wilkommen auf dem Discordserver und viel spass in der Community");
+   member.guild.channels.find("name", "general").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
 
    member.addRole(member.guild.role.find("name", "Zuschauer"));
 });
