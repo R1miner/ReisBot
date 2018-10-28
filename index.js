@@ -47,7 +47,6 @@ bot.on("message", async message => {
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
     if(cmd ===`${prefix}play`){
-        message.channel.send("check");
         if(!args[1]){
             message.channel.send("Bitte schreib ein Link hinein.");
             return;
@@ -56,10 +55,11 @@ bot.on("message", async message => {
             message.channel.send("Du must in einem Voice kanal sein.");
             return;
         }
-
         if(!servers[message.guild.id]) servers[message.guild.id]={
             queue:[]
         };
+
+        server.queue.push(args[1]);
 
         var server = servers[message.guild.id];
 
