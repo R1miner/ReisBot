@@ -28,7 +28,6 @@ bot.on("message",async message =>{
     }
     if(cmd===`${prefix}play`){
         message.channel.send("Bitte schreib ein Link hinein.");
-        return;
         if(!message.member.voiceChannel){
             message.channel.send("Du must in einem Voice kanal sein.");
             return;
