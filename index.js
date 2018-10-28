@@ -21,6 +21,9 @@ bot.on("message",async message =>{
     if(cmd===`hmm`){
         return message.channel.send(":D");
     }
+    if(cmd===`oke`){
+        return message.channel.send("oke");
+    }
 
 });
 
