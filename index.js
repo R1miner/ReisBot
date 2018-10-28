@@ -65,6 +65,7 @@ bot.on("message", async message => {
 
     switch (args[0]) {
         case `${prefix}play`:
+            message.channel.send("check");
             if(!args[1]){
                 message.channel.send("Bitte schreib ein Link hinein.");
                 return;
