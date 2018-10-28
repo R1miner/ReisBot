@@ -6,9 +6,8 @@ var bot = new Discord.Client();
 
 bot.on(`guildMemberAdd`, member =>{
     member.guild.channels.find("name", "main-chat").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
-    let role = message.guild.roles.find(r => r.name === "Zuschauer");
-    let person = message.mentions.members.first();
-    person.addRole(role).catch(console.error);
+    let role = message.guild.roles.get("358289909678604291");
+    member.addRole(role).catch(console.error);
 });
 
 bot.on("ready", async () => {
