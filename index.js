@@ -31,7 +31,7 @@ bot.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
-    var args = messageArray.slice(1);
+    let args = messageArray.slice(1);
     if (cmd === `hmm` || cmd === `Hmm`) {
         return message.channel.send(":D");
     }
@@ -46,29 +46,26 @@ bot.on("message", async message => {
         var server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
+    if(cmd ===`${prefix}play`){
+        message.channel.send("check");
+        if(!args[1]){
+            message.channel.send("Bitte schreib ein Link hinein.");
+            return;
+        }
+        if (!message.member.voiceChannel) {
+            message.channel.send("Du must in einem Voice kanal sein.");
+            return;
+        }
 
-    switch (cmd[0]) {
-        case "$play":
-            message.channel.send("check");
-            if(!cmd[1]){
-                message.channel.send("Bitte schreib ein Link hinein.");
-                return;
-            }
-            if (!message.member.voiceChannel) {
-                message.channel.send("Du must in einem Voice kanal sein.");
-                return;
-            }
+        if(!servers[message.guild.id]) servers[message.guild.id]={
+            queue:[]
+        };
 
-            if(!servers[message.guild.id]) servers[message.guild.id]={
-                queue:[]
-            };
+        var server = servers[message.guild.id];
 
-            var server = servers[message.guild.id];
-
-            if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
-               play(connection, message);
-            });
-            break;
+        if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+            play(connection, message);
+        });
     }
 
 });
