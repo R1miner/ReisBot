@@ -11,14 +11,14 @@ bot.on("ready", async () => {
     bot.user.setActivity("Abonniert ReisMiner auf YT!")
 });
 
-function play(connection, message){
+function play(connection, message) {
     var server = servers[message.guild.id];
 
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter:"audioonly"}));
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
 
-    server.dispatcher.on("end",function () {
-        if(server.queue[0])play(connection,message);
+    server.dispatcher.on("end", function () {
+        if (server.queue[0]) play(connection, message);
         else connection.disconnect();
 
     })
@@ -31,7 +31,7 @@ bot.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
-    let args = messageArray.slice(1);
+    var args = messageArray.slice(1);
     if (cmd === `hmm` || cmd === `Hmm`) {
         return message.channel.send(":D");
     }
@@ -44,25 +44,47 @@ bot.on("message", async message => {
             return;
         } else {
             message.channel.send("Bitte schreib ein Link hinein.");
-            if(!servers[message.guild.id]) servers[message.guild.id]= {
+            if (!servers[message.guild.id]) servers[message.guild.id] = {
                 queue: []
             }
-            server.queue.push(args[1]);
-            if(!messge.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
+
+            if (!messge.guild.voiceConnection) message.member.voiceChannel.join().then(function (connection) {
                 play(connection, message);
-                
+
             })
         }
     }
-    if(cmd === `${prefix}skip`){
+    if (cmd === `${prefix}skip`) {
         var server = servers[message.guild.id];
-        if(server.dispatcher)server.dispatcher.end();
+        if (server.dispatcher) server.dispatcher.end();
     }
-    if(cmd === `${prefix}stop`){
+    if (cmd === `${prefix}stop`) {
         var server = servers[message.guild.id];
-        if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+        if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
 
+    switch (args[0]) {
+        case `${prefix}play`:
+            if(!args[1]){
+                message.channel.send("Bitte schreib ein Link hinein.");
+                return;
+            }
+            if (!message.member.voiceChannel) {
+                message.channel.send("Du must in einem Voice kanal sein.");
+                return;
+            }
+
+            if(!servers[message.guild.id]) servers[message.guild.id]={
+                queue:[]
+            };
+
+            var server = servers[message.guild.id];
+
+            if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+               play(connection, message);
+            });
+            break;
+    }
 
 });
 
