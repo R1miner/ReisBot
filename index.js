@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 var bot = new Discord.Client();
 function normalText(){
-    (message.content=="oke"||message.content=="Oke"){
+    if(message.content=="oke"||message.content=="Oke"){
         message.channel.send("oke");
     }
     if(message.content=="hmm"||message.content=="hmm"){
