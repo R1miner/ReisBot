@@ -16,12 +16,12 @@ bot.on("message",async message =>{
 
     let prefix = botconfig.prefix;
     let messageArray=message.content.split(" ");
-    let cmd= messageArray[0].ignoreCase;
+    let cmd= messageArray[0];
     let args= messageArray.slice(1);
-    if(cmd===`hmm`){
+    if(cmd===`hmm`||cmd===`Hmm`){
         return message.channel.send(":D");
     }
-    if(cmd===`oke`){
+    if(cmd===`oke`||cmd===`Oke`){
         return message.channel.send("oke");
     }
 
