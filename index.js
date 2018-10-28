@@ -10,6 +10,8 @@ bot.on("ready",async()=>{
     bot.user.setActivity("Abonniert ReisMiner auf YT!")
 });
 
+var servers= {};
+
 bot.on("message",async message =>{
     if(message.author.bot) return;
     if(message.channel.type==="dm") return;
@@ -24,6 +26,15 @@ bot.on("message",async message =>{
     if(cmd===`oke`||cmd===`Oke`){
         return message.channel.send("oke");
     }
+    if(cmd===`${prefix}play`){
+        message.channel.send("Bitte schreib ein Link hinein.");
+        return;
+        if(!message.member.voiceChannel){
+            message.channel.send("Du must in einem Voice kanal sein.");
+            return;
+        }
+    }
+
 
 });
 
