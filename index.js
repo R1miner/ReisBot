@@ -4,6 +4,11 @@ const Discord = require("discord.js");
 var bot = new Discord.Client();
 
 
+bot.on(`guildMemberAdd`, member =>{
+    member.guild.channels.find("name", "main-chat").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
+    var role =member.guild.roles.find("name", "Zuschauer");
+    member.addRole(role);
+});
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
@@ -32,9 +37,4 @@ bot.on("message", function (message) {
 
 });
 
-bot.on("guildMemberAdd", function(member){
-   member.guild.channels.find("name", "main-chat").promise(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
-
-   member.addRole(member.guild.roles.find("name", "Zuschauer"));
-});
 bot.login(process.env.BOT_TOKEN);
