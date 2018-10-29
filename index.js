@@ -1,7 +1,6 @@
 const botconfig = require("./botconfig");
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
-bot.commands = new Discord.Collection();
 
 var bot = new Discord.Client();
 var servers = {};
@@ -83,4 +82,4 @@ bot.on("message", function (message) {
 
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(botconfig.token);
