@@ -4,10 +4,8 @@ const Discord = require("discord.js");
 var bot = new Discord.Client();
 
 
-bot.on('guildMemberAdd', member => {
-    var role = member.guild.roles.find("name", "Zuschauer");
-    member.addRole(role);
-    member.guild.channels.find("name", "main-chat").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
+bot.on('guildMemberAdd', (guildMember) => {
+    guildMember.addRole(guildMember.guild.roles.find(role => role.name === "Zuschauer"));
 });
 
 bot.on("ready", async () => {
