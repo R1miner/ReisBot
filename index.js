@@ -4,6 +4,7 @@ const YTDL = require("ytdl-core");
 bot.commands = new Discord.Collection();
 
 var bot = new Discord.Client();
+var servers = {};
 
 
 bot.on('guildMemberAdd', member => {
@@ -50,7 +51,7 @@ bot.on("message", function (message) {
             break;
         case"play":
             if(!args[1]){
-                message.channel.send("Bitte schreib ein Link hinein.");
+                message.channel.send("Bitte schreib ein nach Play.[$play youtube.com/watch?...]");
                 return;
             }
             if (!message.member.voiceChannel) {
@@ -67,11 +68,13 @@ bot.on("message", function (message) {
             if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
                 play(connection, message);
             });
+
             break;
         case"stop":
             var server = servers[message.guild.id];
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
             break;
+
         case"skip":
             var server = servers[message.guild.id];
             if (server.dispatcher) server.dispatcher.end();
