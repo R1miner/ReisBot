@@ -1,5 +1,7 @@
 const botconfig = require("./botconfig");
 const Discord = require("discord.js");
+const YTDL = require("ytdl-core");
+bot.commands = new Discord.Collection();
 
 var bot = new Discord.Client();
 
@@ -7,13 +9,26 @@ var bot = new Discord.Client();
 bot.on('guildMemberAdd', member => {
     var role = member.guild.roles.get("506475646634033162");
     member.addRole(role);
-    member.guild.channels.find("name", "main-chat").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
+    member.guild.channels.find("name", "main-chat").send(member.toString() + " Wilkommen auf dem Discordserver und viel spass in der Community");
 });
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
     bot.user.setActivity("Abonniert ReisMiner auf YT!");
 });
+
+function play(connection, message) {
+    var server = servers[message.guild.id];
+
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+    server.queue.shift();
+
+    server.dispatcher.on("end", function () {
+        if (server.queue[0]) play(connection, message);
+        else connection.disconnect();
+
+    })
+}
 
 bot.on("message", function (message) {
     if (message.author.equals(bot.user)) return;
@@ -32,6 +47,26 @@ bot.on("message", function (message) {
     switch (args[0].toLowerCase()) {
         case"ping":
             message.channel.send("Zu Hoch :grinning:");
+            break;
+        case"play":
+            if(!args[1]){
+                message.channel.send("Bitte schreib ein Link hinein.");
+                return;
+            }
+            if (!message.member.voiceChannel) {
+                message.channel.send("Du must in einem Voice kanal sein.");
+                return;
+            }
+            if(!servers[message.guild.id]) servers[message.guild.id]={
+                queue:[]
+            };
+            var server = servers[message.guild.id];
+
+            server.queue.push(args[1]);
+
+            if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+                play(connection, message);
+            });
             break;
     }
 
