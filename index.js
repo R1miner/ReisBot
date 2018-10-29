@@ -50,7 +50,7 @@ bot.on("message", function (message) {
             break;
         case"play":
             if(!args[1]){
-                message.channel.send("Bitte schreib ein nach Play.[$play youtube.com/watch?...]");
+                message.channel.send("Bitte schreib ein Youtube Link nach Play. Also etwa so: $play youtube.com/watch?...");
                 return;
             }
             if (!message.member.voiceChannel) {
@@ -77,6 +77,9 @@ bot.on("message", function (message) {
         case"skip":
             var server = servers[message.guild.id];
             if (server.dispatcher) server.dispatcher.end();
+            break;
+        case"$help":
+            message.channel.send("$play YTlink für Musik \n $skip lied überspringen \n $stop lied stoppen \n $ping zeigt ping an");
             break;
     }
 
