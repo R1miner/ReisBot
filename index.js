@@ -78,7 +78,7 @@ bot.on("message", function (message) {
             var server = servers[message.guild.id];
             if (server.dispatcher) server.dispatcher.end();
             break;
-        case"$help":
+        case"help":
             message.channel.send("$play YTlink für Musik \n $skip lied überspringen \n $stop lied stoppen \n $ping zeigt ping an");
             break;
     }
