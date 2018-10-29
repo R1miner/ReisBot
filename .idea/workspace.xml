@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0625ff6b-c923-4d73-abdf-5be6eafb3c29" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="0625ff6b-c923-4d73-abdf-5be6eafb3c29" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,9 +68,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1642" />
-    <option name="y" value="222" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1922" />
+    <option name="y" value="22" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -134,14 +129,7 @@
       <workItem from="1540670288281" duration="369000" />
       <workItem from="1540670689418" duration="20218000" />
       <workItem from="1540823414735" duration="3985000" />
-      <workItem from="1540835424735" duration="2851000" />
-    </task>
-    <task id="LOCAL-00009" summary="test?">
-      <created>1540677085287</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1540677085287</updated>
+      <workItem from="1540835424735" duration="3115000" />
     </task>
     <task id="LOCAL-00010" summary="test?">
       <created>1540710632886</created>
@@ -479,23 +467,30 @@
       <option name="project" value="LOCAL" />
       <updated>1540837069559</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Rolle">
+      <created>1540838473852</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1540838473852</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29939000" />
+    <option name="totallyTimeSpent" value="30203000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-1922" y="22" width="1400" height="1000" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32925585" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.36497176" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1300578" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
