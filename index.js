@@ -20,7 +20,7 @@ bot.on("ready", async () => {
 function play(connection, message) {
     var server = servers[message.guild.id];
 
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"},{volume: 6}));
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"},{volume: 0.2}));
     server.queue.shift();
 
     server.dispatcher.on("end", function () {
@@ -79,7 +79,7 @@ bot.on("message", function (message) {
             if (server.dispatcher) server.dispatcher.end();
             break;
         case"help":
-            message.channel.send("$play YTlink für Musik \n $skip lied überspringen \n $stop lied stoppen \n $ping zeigt ping an");
+            message.channel.send("$play YTlink für Musik ICH WÜRD DEN BOT EIN WENIG LEISER MACHEN. DIE MUSIK IST SEHR LAUT\n $skip lied überspringen \n $stop lied stoppen \n $ping zeigt ping an");
             break;
     }
 
