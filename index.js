@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig");
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
+var ffmpeg=require('fluent-ffmpeg');
 
 var bot = new Discord.Client();
 var servers = {};
