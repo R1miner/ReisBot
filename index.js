@@ -1,7 +1,6 @@
 const botconfig = require("./botconfig");
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
-var ffmpeg=require('fluent-ffmpeg');
 
 var bot = new Discord.Client();
 var servers = {};
@@ -21,7 +20,7 @@ bot.on("ready", async () => {
 function play(connection, message) {
     var server = servers[message.guild.id];
 
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly", quality:"lowestaudio"}));
     server.queue.shift();
 
     server.dispatcher.on("end", function () {
