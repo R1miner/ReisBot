@@ -8,7 +8,7 @@ bot.on('guildMemberAdd', member => {
     member.guild.channels.find("name", "main-chat").send(member.toString()+" Wilkommen auf dem Discordserver und viel spass in der Community");
     var role = member.guild.roles.find('name', 'Zuschauer');
     member.addRole(role);
-}
+});
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
