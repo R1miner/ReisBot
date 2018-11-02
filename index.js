@@ -81,6 +81,9 @@ bot.on("message", function (message) {
         case"help":
             message.channel.send("$play YTlink für Musik ICH WÜRD DEN BOT EIN WENIG LEISER MACHEN. DIE MUSIK IST SEHR LAUT\n $skip lied überspringen \n $stop lied stoppen \n $ping zeigt ping an");
             break;
+        case"streaminfo":
+            message.channel.send("Montag ca 15:45 Uhr\n Mittwoch ca 16 Uhr oder früher\n Wochenende bestimmt auch einmal\nallgemein gilt : GLOCKE AKTIVIEREN! :grinning:");
+            break;
     }
 
 });
