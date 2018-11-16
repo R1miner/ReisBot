@@ -41,6 +41,18 @@ bot.on("message", function (message) {
         message.channel.send(":D");
         return;
     }
+    if (message.content == ":shopping_cart:") {
+        message.channel.send("Was war da heute drin?");
+        return;
+    }
+    if (message.content == "-w-" || message.content == "-W-") {
+        message.channel.send("Gute Nacht:sleeping:");
+        return;
+    }
+    if (message.content == ":flag_ch:") {
+        message.channel.send("Beschte Land :heart:");
+        return;
+    }
 
     var args = message.content.substring(botconfig.prefix.length).split(" ");
 
