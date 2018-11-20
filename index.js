@@ -54,7 +54,7 @@ bot.on("message", function (message) {
         return;
     }
 
-    var args = message.content.substring(botconfig.prefix.length).split(" ");
+    var args = message.content.substring("$").split(" ");
 
     switch (args[0].toLowerCase()) {
         case"ping":
