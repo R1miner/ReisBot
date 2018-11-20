@@ -75,13 +75,6 @@ bot.on("message", function (message) {
             if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
                 play(connection, message);
             });
-            if(args[2]=="repeat"){
-                var server = servers[message.guild.id];
-
-                server.dispatcher.on("end", function () {
-                    server.dispatcher = connection.playStream(YTDL(args[1], {filter: "audioonly"},{volume: 0.2}));
-                })
-            }
             break;
         case"stop":
             var server = servers[message.guild.id];
