@@ -41,10 +41,6 @@ bot.on("message", function (message) {
         message.channel.send(":D");
         return;
     }
-    if (message.content == ":shopping_cart:") {
-        message.channel.send("Was war da heute drin?");
-        return;
-    }
     if (message.content == "-w-" || message.content == "-W-") {
         message.channel.send("Gute Nacht:sleeping:");
         return;
@@ -54,7 +50,7 @@ bot.on("message", function (message) {
         return;
     }
 
-    var args = message.content.substring("$").split(" ");
+    var args = message.content.substring("$".length).split(" ");
 
     switch (args[0].toLowerCase()) {
         case"ping":
@@ -79,7 +75,13 @@ bot.on("message", function (message) {
             if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
                 play(connection, message);
             });
+            if(args[2]=="repeat"){
+                var server = servers[message.guild.id];
 
+                server.dispatcher.on("end", function () {
+                    server.dispatcher = connection.playStream(YTDL(args[1], {filter: "audioonly"},{volume: 0.2}));
+                })
+            }
             break;
         case"stop":
             var server = servers[message.guild.id];
