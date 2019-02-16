@@ -29,6 +29,11 @@ function play(connection, message) {
     })
 }
 
+if(message.includes('Arsch'||'Oberägeri'||'oberägeri'||'arsch')){
+    message.delete();
+    message.channel.send("Eines der gebrauchten Wörter ist nicht erlaubt!");
+}
+
 bot.on("message", function (message) {
     if (message.author.equals(bot.user)) return;
 
