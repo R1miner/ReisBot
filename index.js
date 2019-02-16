@@ -19,7 +19,6 @@ bot.on("ready", async () => {
 
 function play(connection, message) {
     var server = servers[message.guild.id];
-
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"},{volume: 0.2}));
     server.queue.shift();
 
