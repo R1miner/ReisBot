@@ -17,8 +17,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="231">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -148,21 +148,7 @@
       <workItem from="1542383005260" duration="21000" />
       <workItem from="1542392297709" duration="874000" />
       <workItem from="1542738680026" duration="1343000" />
-      <workItem from="1550331574203" duration="1272000" />
-    </task>
-    <task id="LOCAL-00030" summary="test?">
-      <created>1540752717658</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1540752717658</updated>
-    </task>
-    <task id="LOCAL-00031" summary="test?">
-      <created>1540753000660</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1540753000660</updated>
+      <workItem from="1550331574203" duration="1798000" />
     </task>
     <task id="LOCAL-00032" summary="test?">
       <created>1540753478888</created>
@@ -493,11 +479,25 @@
       <option name="project" value="LOCAL" />
       <updated>1550332619685</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Prefix fix">
+      <created>1550332883512</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1550332883512</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Prefix fix">
+      <created>1550333050599</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1550333050599</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37595000" />
+    <option name="totallyTimeSpent" value="38121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -852,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="231">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
         </state>
       </provider>
     </entry>

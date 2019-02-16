@@ -4,6 +4,7 @@ const YTDL = require("ytdl-core");
 
 var bot = new Discord.Client();
 var servers = {};
+var msg = message.content.ignoreCase();
 
 
 bot.on('guildMemberAdd', member =>  {
@@ -29,7 +30,7 @@ function play(connection, message) {
     })
 }
 
-if(message.includes('Arsch'||'Oberägeri'||'oberägeri'||'arsch')){
+if(msg.includes('Arsch'||'Oberägeri')){
     message.delete();
     message.channel.send("Eines der gebrauchten Wörter ist nicht erlaubt!");
 }
