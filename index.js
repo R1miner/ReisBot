@@ -37,18 +37,6 @@ bot.on("message", function (message) {
         message.channel.send("oke");
         return;
     }
-    if (message.content == "hmm" || message.content == "Hmm") {
-        message.channel.send(":D");
-        return;
-    }
-    if (message.content == "-w-" || message.content == "-W-") {
-        message.channel.send("Gute Nacht:sleeping:");
-        return;
-    }
-    if (message.content == ":flag_ch:") {
-        message.channel.send("Beschte Land :heart:");
-        return;
-    }
 
     var args = message.content.substring("$".length).split(" ");
 
@@ -76,6 +64,7 @@ bot.on("message", function (message) {
                 play(connection, message);
             });
             break;
+            
         case"stop":
             var server = servers[message.guild.id];
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
